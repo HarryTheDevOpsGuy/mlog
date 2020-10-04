@@ -1,5 +1,5 @@
 # mLog Version
- **Version**        : v0.0.1 <br>
+ **Version**        : v0.0.2 <br>
  **Release Date**   : 04-Oct-20 <br>
 
 #### What is mlog ?
