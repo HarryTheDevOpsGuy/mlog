@@ -1,6 +1,6 @@
 # mLog Version
- **Version**        : v0.0.4 <br>
- **Release Date**   : 04-Feb-21 <br>
+ **Version**        : v0.0.5 <br>
+ **Release Date**   : 06-Feb-21 <br>
 
 #### What is mlog ?
 mlog is small script to manage your application logs like nginx, apache, tomcat, laravel, or any other application. it will help you to take backup of your logs file on periodically and will upload in target s3 bucket. it is fully safe and automated. you can use this tool with fully trust and without any data loss.
@@ -56,4 +56,13 @@ for (( i = 1; i < 10; i++ )); do
   export LOGDAY=$i
   mlog /var/log/tomcat-app*/app*.log.$(date --date="$i days ago" +'%Y-%m-%d')*  s3://mylog-bucket/logs
 done
+```
+
+---
+## s3 log path
+all log file will upload in below format and destination in your s3 bucket.
+```
+${S3_BUCKET_PATH}/${HOST_IP}/${APP_NAME}/${YEAR}/${MONTH}/${TODAY}/${DST_FILE_NAME}
+s3://bucketName/your_dir/172.31.16.2/nginx/2021/01/2021-01-29/access.log-2021-01-29
+s3://bucketName/your_dir/172.31.16.2/nginx/2021/01/2021-01-29/error.log-2021-01-29
 ```
